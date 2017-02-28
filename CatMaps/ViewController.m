@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DetailViewController.h"
 #import "CatCollectionViewCell.h"
 #import "URLManager.h"
 
@@ -15,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *catCollectionView;
 @property (nonatomic, strong) URLManager *vcURLManager;
 @property (nonatomic, strong) NSMutableArray *catsArray;
+
+@property (nonatomic) NSIndexPath *selectedIndexPath;
 
 @end
 
@@ -57,6 +60,25 @@
         [self.catCollectionView reloadData];
         
     }];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedIndexPath = indexPath;
+    [self performSegueWithIdentifier:@"showDetails" sender:self];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"showDetails"]) {
+        
+        CatPhoto *photo = [self.catsArray objectAtIndex:self.selectedIndexPath.item];
+        DetailViewController *detailVC = segue.destinationViewController;
+        detailVC.photoCat = photo;
+        
+    }
 }
 
 @end

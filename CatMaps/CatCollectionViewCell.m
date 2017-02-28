@@ -30,7 +30,7 @@
 {
     self.urlManager = [[URLManager alloc] init];
     
-    self.catTitleLabel.text = self.photoCat.title;
+    self.catTitleLabel.text = self.photoCat.photoTitle;
     
     [self.urlManager downloadCatPhotos:self.photoCat.imageURL completion:^(UIImage *image) {
         

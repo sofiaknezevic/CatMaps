@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
-@interface CatPhoto : NSObject
+@interface CatPhoto : NSObject <MKAnnotation>
 
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *photoTitle;
 @property (nonatomic, strong) NSURL *imageURL;
+
+@property (nonatomic, strong) NSString *photoID;
+
+@property(nonatomic) CLLocationCoordinate2D coordinate;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionaryOfCats;
 + (NSArray *)makePhotoArray:(NSArray *)catPhotoArray;

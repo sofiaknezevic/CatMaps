@@ -15,8 +15,9 @@
     self = [super init];
     if (self) {
         
-        self.title = dictionaryOfCats[@"title"];
-        
+        self.photoTitle = dictionaryOfCats[@"title"];
+        self.photoID = dictionaryOfCats[@"id"];
+                                        
         NSString *urlString = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg",
                                dictionaryOfCats[@"farm"],
                                dictionaryOfCats[@"server"],

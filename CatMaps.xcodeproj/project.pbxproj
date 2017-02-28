@@ -16,6 +16,10 @@
 		5D27AE0D1E65E12500F39312 /* CatPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27AE0C1E65E12500F39312 /* CatPhoto.m */; };
 		5D27AE101E65E14A00F39312 /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27AE0F1E65E14A00F39312 /* CatCollectionViewCell.m */; };
 		5D27AE131E65E24400F39312 /* URLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27AE121E65E24400F39312 /* URLManager.m */; };
+		5D27AE161E66128C00F39312 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D27AE151E66128C00F39312 /* MapKit.framework */; };
+		5D27AE181E6612CB00F39312 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D27AE171E6612CB00F39312 /* CoreLocation.framework */; };
+		5D27AE1B1E6614D600F39312 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27AE1A1E6614D600F39312 /* LocationManager.m */; };
+		5D27AE1E1E66157600F39312 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27AE1D1E66157600F39312 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,12 @@
 		5D27AE0F1E65E14A00F39312 /* CatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCollectionViewCell.m; sourceTree = "<group>"; };
 		5D27AE111E65E24400F39312 /* URLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLManager.h; sourceTree = "<group>"; };
 		5D27AE121E65E24400F39312 /* URLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLManager.m; sourceTree = "<group>"; };
+		5D27AE151E66128C00F39312 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5D27AE171E6612CB00F39312 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5D27AE191E6614D600F39312 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		5D27AE1A1E6614D600F39312 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		5D27AE1C1E66157600F39312 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5D27AE1D1E66157600F39312 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D27AE181E6612CB00F39312 /* CoreLocation.framework in Frameworks */,
+				5D27AE161E66128C00F39312 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +65,7 @@
 			children = (
 				5D27ADED1E65E0C700F39312 /* CatMaps */,
 				5D27ADEC1E65E0C700F39312 /* Products */,
+				5D27AE141E66128C00F39312 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +105,8 @@
 			children = (
 				5D27ADF41E65E0C700F39312 /* ViewController.h */,
 				5D27ADF51E65E0C700F39312 /* ViewController.m */,
+				5D27AE1C1E66157600F39312 /* DetailViewController.h */,
+				5D27AE1D1E66157600F39312 /* DetailViewController.m */,
 			);
 			name = "Controller(s)";
 			sourceTree = "<group>";
@@ -103,6 +118,8 @@
 				5D27ADF21E65E0C700F39312 /* AppDelegate.m */,
 				5D27AE111E65E24400F39312 /* URLManager.h */,
 				5D27AE121E65E24400F39312 /* URLManager.m */,
+				5D27AE191E6614D600F39312 /* LocationManager.h */,
+				5D27AE1A1E6614D600F39312 /* LocationManager.m */,
 				5D27AE0B1E65E12500F39312 /* CatPhoto.h */,
 				5D27AE0C1E65E12500F39312 /* CatPhoto.m */,
 			);
@@ -116,6 +133,15 @@
 				5D27AE0F1E65E14A00F39312 /* CatCollectionViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		5D27AE141E66128C00F39312 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D27AE171E6612CB00F39312 /* CoreLocation.framework */,
+				5D27AE151E66128C00F39312 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D27ADF61E65E0C700F39312 /* ViewController.m in Sources */,
+				5D27AE1B1E6614D600F39312 /* LocationManager.m in Sources */,
 				5D27ADF31E65E0C700F39312 /* AppDelegate.m in Sources */,
+				5D27AE1E1E66157600F39312 /* DetailViewController.m in Sources */,
 				5D27ADF01E65E0C700F39312 /* main.m in Sources */,
 				5D27AE131E65E24400F39312 /* URLManager.m in Sources */,
 				5D27AE0D1E65E12500F39312 /* CatPhoto.m in Sources */,
