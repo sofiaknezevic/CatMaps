@@ -10,4 +10,11 @@
 
 @interface CatPhoto : NSObject
 
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSURL *imageURL;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionaryOfCats;
++ (NSArray *)makePhotoArray:(NSArray *)catPhotoArray;
+
+
 @end

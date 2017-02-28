@@ -15,6 +15,7 @@
 		5D27ADFE1E65E0C700F39312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D27ADFC1E65E0C700F39312 /* LaunchScreen.storyboard */; };
 		5D27AE0D1E65E12500F39312 /* CatPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27AE0C1E65E12500F39312 /* CatPhoto.m */; };
 		5D27AE101E65E14A00F39312 /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27AE0F1E65E14A00F39312 /* CatCollectionViewCell.m */; };
+		5D27AE131E65E24400F39312 /* URLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27AE121E65E24400F39312 /* URLManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		5D27AE0C1E65E12500F39312 /* CatPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatPhoto.m; sourceTree = "<group>"; };
 		5D27AE0E1E65E14A00F39312 /* CatCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatCollectionViewCell.h; sourceTree = "<group>"; };
 		5D27AE0F1E65E14A00F39312 /* CatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCollectionViewCell.m; sourceTree = "<group>"; };
+		5D27AE111E65E24400F39312 /* URLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLManager.h; sourceTree = "<group>"; };
+		5D27AE121E65E24400F39312 /* URLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 			children = (
 				5D27ADF11E65E0C700F39312 /* AppDelegate.h */,
 				5D27ADF21E65E0C700F39312 /* AppDelegate.m */,
+				5D27AE111E65E24400F39312 /* URLManager.h */,
+				5D27AE121E65E24400F39312 /* URLManager.m */,
 				5D27AE0B1E65E12500F39312 /* CatPhoto.h */,
 				5D27AE0C1E65E12500F39312 /* CatPhoto.m */,
 			);
@@ -188,6 +193,7 @@
 				5D27ADF61E65E0C700F39312 /* ViewController.m in Sources */,
 				5D27ADF31E65E0C700F39312 /* AppDelegate.m in Sources */,
 				5D27ADF01E65E0C700F39312 /* main.m in Sources */,
+				5D27AE131E65E24400F39312 /* URLManager.m in Sources */,
 				5D27AE0D1E65E12500F39312 /* CatPhoto.m in Sources */,
 				5D27AE101E65E14A00F39312 /* CatCollectionViewCell.m in Sources */,
 			);
