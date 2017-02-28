@@ -7,23 +7,57 @@
 //
 
 #import "ViewController.h"
+#import "CatCollectionViewCell.h"
+#import "URLManager.h"
 
-@interface ViewController ()
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *catCollectionView;
+@property (nonatomic, strong) URLManager *vcURLManager;
+@property (nonatomic, strong) NSMutableArray *catsArray;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+-(void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.catsArray = [[NSMutableArray alloc] init];
+    
+    self.vcURLManager = [[URLManager alloc] init];
+    
+    [self getPictures];
+    
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    CatCollectionViewCell *cell = [self.catCollectionView dequeueReusableCellWithReuseIdentifier:@"catCell" forIndexPath:indexPath];
+    
+    cell.photoCat = self.catsArray[indexPath.row];
+    
+    return cell;
+    
 }
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    
+    return self.catsArray.count;
+}
+
+- (void)getPictures
+{
+    [self.vcURLManager getCatPhotos:^(NSArray *photos) {
+        self.catsArray = [photos mutableCopy];
+        [self.catCollectionView reloadData];
+        
+    }];
+}
 
 @end
+
