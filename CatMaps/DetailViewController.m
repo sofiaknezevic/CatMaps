@@ -36,6 +36,7 @@
         self.longitudeLabel.text = [NSString stringWithFormat:@"Longitude: %f", self.photoCat.coordinate.longitude];
         
         [self setMapView];
+    
   
     }];
   

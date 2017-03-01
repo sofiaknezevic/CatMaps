@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *catTitleLabel;
 
 
+
 @end
 
 @implementation CatCollectionViewCell
@@ -36,5 +37,6 @@
         
     }];
 }
+
 
 @end

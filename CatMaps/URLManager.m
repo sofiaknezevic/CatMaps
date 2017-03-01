@@ -9,13 +9,14 @@
 #import "URLManager.h"
 #import "CatPhoto.h"
 
-#warning this class could be named better!!
 @implementation URLManager
 
-- (void)getCatPhotos:(void (^)(NSArray *))completion
+
++ (void)getCatPhotos:(NSString *)taggedItems withBlock:(void (^)(NSArray *))completion
 {
+    NSString *urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=0cc7ae9a26a7004b8b62ccf022169691&tags=%@&has_geo=1&extras=url_m&format=json&nojsoncallback=1", taggedItems];
     
-    NSURL *catURL = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=0cc7ae9a26a7004b8b62ccf022169691&tags=cat&has_geo=1&extras=url_m&format=json&nojsoncallback=1"];
+    NSURL *catURL = [NSURL URLWithString:urlString];
     
     NSURLRequest *requestURL = [NSURLRequest requestWithURL:catURL];
     
@@ -67,7 +68,7 @@
     
 }
 
-#warning this can be refactored better, possibly a category? definitely a class method if not.
+
 + (void)downloadCatPhotos:(NSURL *)url completion:(void (^)(UIImage *))completion
 {
     
@@ -105,5 +106,7 @@
     
     
 }
+
+
 
 @end

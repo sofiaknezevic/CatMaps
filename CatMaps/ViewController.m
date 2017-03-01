@@ -10,11 +10,11 @@
 #import "DetailViewController.h"
 #import "CatCollectionViewCell.h"
 #import "URLManager.h"
+#import "SearchViewController.h"
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, SearchViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *catCollectionView;
-@property (nonatomic, strong) URLManager *vcURLManager;
 @property (nonatomic, strong) NSMutableArray *catsArray;
 
 @property (nonatomic) NSIndexPath *selectedIndexPath;
@@ -26,10 +26,9 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+
     
     self.catsArray = [[NSMutableArray alloc] init];
-    
-    self.vcURLManager = [[URLManager alloc] init];
     
     [self getPictures];
     
@@ -55,7 +54,7 @@
 
 - (void)getPictures
 {
-    [self.vcURLManager getCatPhotos:^(NSArray *photos) {
+    [URLManager getCatPhotos:@"Hello" withBlock:^(NSArray *photos) {
         self.catsArray = [photos mutableCopy];
         [self.catCollectionView reloadData];
         
@@ -78,8 +77,23 @@
         DetailViewController *detailVC = segue.destinationViewController;
         detailVC.photoCat = photo;
         
+    }else if ([segue.identifier isEqualToString:@"showSearch"]){
+        
+        SearchViewController *searchVC = segue.destinationViewController;
+        searchVC.searchViewControllerDelegate = self;
+        
     }
+    
 }
+
+- (void)getArrayOfSearchedPhotos:(NSMutableArray *)arrayOfTaggedPhotos
+{
+    
+    self.catsArray = arrayOfTaggedPhotos;
+    [self.catCollectionView reloadData];
+    
+}
+
 
 @end
 

@@ -22,5 +22,4 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionaryOfCats;
 + (NSArray *)makePhotoArray:(NSArray *)catPhotoArray;
 
-
 @end

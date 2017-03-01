@@ -386,6 +386,7 @@
 				5D27AE041E65E0C700F39312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+@protocol SearchViewControllerDelegate <NSObject>
+
+- (void)getArrayOfSearchedPhotos:(NSMutableArray *)arrayOfTaggedPhotos;
+
+@end
 
 @interface SearchViewController : UIViewController
+
+@property (nonatomic, weak) id <SearchViewControllerDelegate> searchViewControllerDelegate;
+
 
 @end
