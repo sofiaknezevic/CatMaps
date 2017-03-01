@@ -11,7 +11,8 @@
 
 @interface CatPhoto : NSObject <MKAnnotation>
 
-@property (nonatomic, strong) NSString *photoTitle;
+@property (nonatomic, copy) NSString *title;
+
 @property (nonatomic, strong) NSURL *imageURL;
 
 @property (nonatomic, strong) NSString *photoID;

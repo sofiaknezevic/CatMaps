@@ -12,6 +12,6 @@
 @interface URLManager : NSObject
 
 - (void)getCatPhotos:(void (^)(NSArray *))completion;
-- (void)downloadCatPhotos:(NSURL *)url completion:(void (^)(UIImage *))completion;
++ (void)downloadCatPhotos:(NSURL *)url completion:(void (^)(UIImage *))completion;
 
 @end

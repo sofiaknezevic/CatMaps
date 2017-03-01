@@ -23,10 +23,9 @@
     
     NSURLSessionDataTask *dataTask = [sessionConfiguration
                                       dataTaskWithRequest:requestURL
-                                      completionHandler:^
-                                      (NSData * _Nullable data,
-                                       NSURLResponse * _Nullable response,
-                                       NSError * _Nullable error) {
+                                      completionHandler:^ (NSData * _Nullable data,
+                                                           NSURLResponse * _Nullable response,
+                                                           NSError * _Nullable error) {
                                           
                                           if (error) {
                                               
@@ -49,16 +48,21 @@
                                               
                                           }
                                           
-                                          NSDictionary *photoDictionary = getThatJSON[@"photo"][@"photos"];
-                                          
+                                          NSDictionary *photoDictionary = getThatJSON[@"photo"];
                                           NSDictionary *locationDictionary = photoDictionary[@"location"];
                                           
-                                          double latitude = [locationDictionary[@"latitude"]doubleValue];
-                                          double longitude = [locationDictionary[@"longitude"]doubleValue];
+                                          double latitude = [[locationDictionary valueForKey:@"latitude"]doubleValue];
+                                          double longitude = [[locationDictionary valueForKey:@"longitude"]doubleValue];
                                           
-                                          NSLog(@"%f, %f", latitude, longitude);
+                                          CLLocationCoordinate2D catLocation = CLLocationCoordinate2DMake(latitude, longitude);
+                                          
+                                          [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                                              completion(catLocation);
+                                              
+                                          }];
                                           
                                       }];
+
     [dataTask resume];
 }
 @end

@@ -13,7 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *catImageView;
 @property (weak, nonatomic) IBOutlet UILabel *catTitleLabel;
-@property (nonatomic, strong) URLManager *urlManager;
 
 
 @end
@@ -28,11 +27,10 @@
 
 -(void)configureCell
 {
-    self.urlManager = [[URLManager alloc] init];
     
-    self.catTitleLabel.text = self.photoCat.photoTitle;
+    self.catTitleLabel.text = self.photoCat.title;
     
-    [self.urlManager downloadCatPhotos:self.photoCat.imageURL completion:^(UIImage *image) {
+    [URLManager downloadCatPhotos:self.photoCat.imageURL completion:^(UIImage *image) {
         
         self.catImageView.image = image;
         

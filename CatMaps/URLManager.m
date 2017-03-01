@@ -68,7 +68,7 @@
 }
 
 #warning this can be refactored better, possibly a category? definitely a class method if not.
-- (void)downloadCatPhotos:(NSURL *)url completion:(void (^)(UIImage *))completion
++ (void)downloadCatPhotos:(NSURL *)url completion:(void (^)(UIImage *))completion
 {
     
     
