@@ -26,11 +26,12 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self performSegueWithIdentifier:@"showSearch" sender:self];
 
     
     self.catsArray = [[NSMutableArray alloc] init];
     
-    [self getPictures];
     
 }
 
@@ -50,15 +51,6 @@
 {
     
     return self.catsArray.count;
-}
-
-- (void)getPictures
-{
-    [URLManager getCatPhotos:@"Hello" withBlock:^(NSArray *photos) {
-        self.catsArray = [photos mutableCopy];
-        [self.catCollectionView reloadData];
-        
-    }];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -88,11 +80,12 @@
 
 - (void)getArrayOfSearchedPhotos:(NSMutableArray *)arrayOfTaggedPhotos
 {
-    
     self.catsArray = arrayOfTaggedPhotos;
+
     [self.catCollectionView reloadData];
     
 }
+
 
 
 @end

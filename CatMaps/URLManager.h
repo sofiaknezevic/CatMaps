@@ -11,7 +11,7 @@
 
 @interface URLManager : NSObject
 
-+ (void)getCatPhotos:(NSString *)taggedItems withBlock:(void (^)(NSArray *))completion;
++ (void)getCatPhotos:(NSString *)taggedItems andLatitude:(double)photoLatitude andLongitude:(double)photoLongitude withBlock:(void (^)(NSArray *))completion;
 
 + (void)downloadCatPhotos:(NSURL *)url completion:(void (^)(UIImage *))completion;
 

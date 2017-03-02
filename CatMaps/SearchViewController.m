@@ -8,12 +8,20 @@
 
 #import "SearchViewController.h"
 #import "URLManager.h"
+#import "LocationManager.h"
+#import "CatPhoto.h"
 
 @interface SearchViewController ()<CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *searchLocationManager;
+
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *locationSwitch;
+
+@property (nonatomic, assign) BOOL isAroundMe;
+@property (nonatomic, strong) NSMutableArray *imagesAroundMe;
+
+@property (nonatomic) CLLocation *myLocation;
 
 @end
 
@@ -22,6 +30,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    self.imagesAroundMe = [[NSMutableArray alloc] init];
     
 
 }
@@ -30,10 +39,12 @@
     if (![sender isOn]) {
         
         [self.searchLocationManager stopUpdatingLocation];
+        self.isAroundMe = NO;
         
     }else if ([sender isOn]){
         
         [self searchItUp];
+        self.isAroundMe = YES;
         
     }
     
@@ -54,9 +65,6 @@
     [self.searchLocationManager requestLocation];
     [self.searchLocationManager startUpdatingLocation];
     
-
-    
-    
 }
 
 - (IBAction)searchButtonClicked:(id)sender {
@@ -64,20 +72,40 @@
     NSString *taggedItems = self.searchTextField.text;
     taggedItems = [taggedItems stringByReplacingOccurrencesOfString:@" " withString:@"%2C+"];
     
-    [URLManager getCatPhotos:taggedItems withBlock:^(NSArray *catPhotos) {
+    CLLocationCoordinate2D myCoordinate;
+    
+    if (self.isAroundMe == YES) {
         
-        [self.searchViewControllerDelegate getArrayOfSearchedPhotos:[catPhotos mutableCopy]];
+        myCoordinate = self.myLocation.coordinate;
+        
+    }else if (self.isAroundMe == NO){
+        
+        myCoordinate = CLLocationCoordinate2DMake(0, 0);
+        
+    }
+    
+    [URLManager getCatPhotos:taggedItems andLatitude:myCoordinate.latitude andLongitude:myCoordinate.longitude withBlock:^(NSArray *allPhotos) {
+        
+
+        for (CatPhoto *photo in allPhotos) {
+            
+            [self.imagesAroundMe addObject:photo];
+            
+            [self.searchViewControllerDelegate getArrayOfSearchedPhotos:self.imagesAroundMe];
+        }
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
         
     }];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
-    
-    NSLog(@"%@", [locations lastObject]);
+    [self.searchLocationManager stopUpdatingLocation];
+
+    self.myLocation = [locations lastObject];
     
 }
 

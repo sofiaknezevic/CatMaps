@@ -12,11 +12,25 @@
 @implementation URLManager
 
 
-+ (void)getCatPhotos:(NSString *)taggedItems withBlock:(void (^)(NSArray *))completion
++ (void)getCatPhotos:(NSString *)taggedItems andLatitude:(double)photoLatitude andLongitude:(double)photoLongitude withBlock:(void (^)(NSArray *))completion
 {
-    NSString *urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=0cc7ae9a26a7004b8b62ccf022169691&tags=%@&has_geo=1&extras=url_m&format=json&nojsoncallback=1", taggedItems];
+    NSString *urlString = [[NSString alloc] init];
+    
+    if (photoLatitude == 0 && photoLongitude == 0) {
+        
+        urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=0cc7ae9a26a7004b8b62ccf022169691&tags=%@&has_geo=1&extras=url_m&format=json&nojsoncallback=1", taggedItems];
+        
+    }else{
+        
+        urlString = [NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=0cc7ae9a26a7004b8b62ccf022169691&tags=%@&has_geo=1&lat=%f&lon=%f&extras=url_m&format=json&nojsoncallback=1", taggedItems, photoLatitude, photoLongitude];
+        
+    }
+    
+
     
     NSURL *catURL = [NSURL URLWithString:urlString];
+    
+    NSLog(@"%@", catURL);
     
     NSURLRequest *requestURL = [NSURLRequest requestWithURL:catURL];
     
