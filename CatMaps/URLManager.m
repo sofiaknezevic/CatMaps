@@ -26,11 +26,8 @@
         
     }
     
-
-    
     NSURL *catURL = [NSURL URLWithString:urlString];
-    
-    NSLog(@"%@", catURL);
+ 
     
     NSURLRequest *requestURL = [NSURLRequest requestWithURL:catURL];
     

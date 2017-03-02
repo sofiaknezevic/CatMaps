@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ShowAllViewController viewDidLoad]:ShowAllViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.arrayOfShowAllPhotos">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__44-[SearchViewController searchButtonClicked:]_block_invoke:SearchViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController getArrayOfSearchedPhotos:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.vcShowAll">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController prepareForSegue:sender:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.catsArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ShowAllViewController getCoordinates:]:ShowAllViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ShowAllViewController setUpMapView]:ShowAllViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.arrayOfShowAllPhotos">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

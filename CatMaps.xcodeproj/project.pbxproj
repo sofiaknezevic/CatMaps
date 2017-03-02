@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D19AED91E67C050002479F7 /* ShowAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D19AED81E67C050002479F7 /* ShowAllViewController.m */; };
 		5D27ADF01E65E0C700F39312 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27ADEF1E65E0C700F39312 /* main.m */; };
 		5D27ADF31E65E0C700F39312 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27ADF21E65E0C700F39312 /* AppDelegate.m */; };
 		5D27ADF61E65E0C700F39312 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27ADF51E65E0C700F39312 /* ViewController.m */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D19AED71E67C050002479F7 /* ShowAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAllViewController.h; sourceTree = "<group>"; };
+		5D19AED81E67C050002479F7 /* ShowAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAllViewController.m; sourceTree = "<group>"; };
 		5D27ADEB1E65E0C700F39312 /* CatMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D27ADEF1E65E0C700F39312 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5D27ADF11E65E0C700F39312 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				5D27AE1D1E66157600F39312 /* DetailViewController.m */,
 				5D27AE211E66486600F39312 /* SearchViewController.h */,
 				5D27AE221E66486600F39312 /* SearchViewController.m */,
+				5D19AED71E67C050002479F7 /* ShowAllViewController.h */,
+				5D19AED81E67C050002479F7 /* ShowAllViewController.m */,
 			);
 			name = "Controller(s)";
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D27ADF61E65E0C700F39312 /* ViewController.m in Sources */,
+				5D19AED91E67C050002479F7 /* ShowAllViewController.m in Sources */,
 				5D27AE1B1E6614D600F39312 /* LocationManager.m in Sources */,
 				5D27ADF31E65E0C700F39312 /* AppDelegate.m in Sources */,
 				5D27AE1E1E66157600F39312 /* DetailViewController.m in Sources */,

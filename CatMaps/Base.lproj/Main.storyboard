@@ -90,6 +90,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="mrs-hv-e5h">
+                        <barButtonItem key="leftBarButtonItem" id="AP8-sb-AYy">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qFa-2w-F5j">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show All"/>
+                                <connections>
+                                    <segue destination="HIk-XP-kuP" kind="presentation" identifier="showAll" id="pkz-2Z-y1A"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="kLn-SW-xTx">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4oU-ok-iVk">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
@@ -157,6 +167,33 @@
             </objects>
             <point key="canvasLocation" x="137" y="992"/>
         </scene>
+        <!--Show All View Controller-->
+        <scene sceneID="I5f-02-hEc">
+            <objects>
+                <viewController id="HIk-XP-kuP" customClass="ShowAllViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="omn-7P-Kyr"/>
+                        <viewControllerLayoutGuide type="bottom" id="1uG-D9-8uJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="62C-p8-jic">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vpt-LU-zRv">
+                                <rect key="frame" x="16" y="28" width="343" height="619"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="photosLocation" destination="Vpt-LU-zRv" id="skS-ZP-mef"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HXl-Om-wSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277.5999999999999" y="991.75412293853083"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="lMn-hj-fqq">
             <objects>
@@ -194,9 +231,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="Bip-4g-yiX"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="catLocation" destination="1pC-mK-fj3" id="uQA-aZ-iJl"/>

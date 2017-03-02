@@ -7,10 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "URLManager.h"
 #import "DetailViewController.h"
 #import "CatCollectionViewCell.h"
-#import "URLManager.h"
 #import "SearchViewController.h"
+#import "ShowAllViewController.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, SearchViewControllerDelegate>
 
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) NSMutableArray *catsArray;
 
 @property (nonatomic) NSIndexPath *selectedIndexPath;
+
+@property (nonatomic, strong) ShowAllViewController *vcShowAll;
 
 @end
 
@@ -74,18 +77,22 @@
         SearchViewController *searchVC = segue.destinationViewController;
         searchVC.searchViewControllerDelegate = self;
         
+    }else if ([segue.identifier isEqualToString:@"showAll"]){
+        
+        ShowAllViewController *showAllVC = segue.destinationViewController;
+        showAllVC.arrayOfShowAllPhotos = self.catsArray;
+        
     }
-    
+        
 }
 
 - (void)getArrayOfSearchedPhotos:(NSMutableArray *)arrayOfTaggedPhotos
 {
     self.catsArray = arrayOfTaggedPhotos;
-
+    
     [self.catCollectionView reloadData];
     
 }
-
 
 
 @end
