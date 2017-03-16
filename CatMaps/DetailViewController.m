@@ -11,6 +11,7 @@
 #import "URLManager.h"
 
 @interface DetailViewController ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *detailCat;
 @property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
@@ -25,6 +26,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    
     
     self.navigationItem.title = self.photoCat.title;
     

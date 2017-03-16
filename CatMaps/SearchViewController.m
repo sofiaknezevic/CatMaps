@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) CLLocationManager *searchLocationManager;
 
+
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *locationSwitch;
 

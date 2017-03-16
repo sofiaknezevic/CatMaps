@@ -46,13 +46,5 @@
     
     
 }
-//- (void)setUpMapView
-//{
-//    
-//    [self.photosLocation addAnnotations:self.arrayOfShowAllPhotos];
-//   
-//}
-
-
 
 @end

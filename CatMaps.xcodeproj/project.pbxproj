@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D19AED91E67C050002479F7 /* ShowAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D19AED81E67C050002479F7 /* ShowAllViewController.m */; };
+		5D2088DF1E6A071F00910549 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2088DE1E6A071F00910549 /* CoreData.framework */; };
+		5D2088E51E6A0A6600910549 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2088E41E6A0A6600910549 /* CoreDataManager.m */; };
 		5D27ADF01E65E0C700F39312 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27ADEF1E65E0C700F39312 /* main.m */; };
 		5D27ADF31E65E0C700F39312 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27ADF21E65E0C700F39312 /* AppDelegate.m */; };
 		5D27ADF61E65E0C700F39312 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D27ADF51E65E0C700F39312 /* ViewController.m */; };
@@ -27,6 +29,9 @@
 /* Begin PBXFileReference section */
 		5D19AED71E67C050002479F7 /* ShowAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAllViewController.h; sourceTree = "<group>"; };
 		5D19AED81E67C050002479F7 /* ShowAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAllViewController.m; sourceTree = "<group>"; };
+		5D2088DE1E6A071F00910549 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5D2088E31E6A0A6600910549 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		5D2088E41E6A0A6600910549 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		5D27ADEB1E65E0C700F39312 /* CatMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D27ADEF1E65E0C700F39312 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5D27ADF11E65E0C700F39312 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2088DF1E6A071F00910549 /* CoreData.framework in Frameworks */,
 				5D27AE201E663FAB00F39312 /* MapKit.framework in Frameworks */,
 				5D27AE181E6612CB00F39312 /* CoreLocation.framework in Frameworks */,
 			);
@@ -126,6 +132,8 @@
 			children = (
 				5D27ADF11E65E0C700F39312 /* AppDelegate.h */,
 				5D27ADF21E65E0C700F39312 /* AppDelegate.m */,
+				5D2088E31E6A0A6600910549 /* CoreDataManager.h */,
+				5D2088E41E6A0A6600910549 /* CoreDataManager.m */,
 				5D27AE111E65E24400F39312 /* URLManager.h */,
 				5D27AE121E65E24400F39312 /* URLManager.m */,
 				5D27AE191E6614D600F39312 /* LocationManager.h */,
@@ -148,6 +156,7 @@
 		5D27AE141E66128C00F39312 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D2088DE1E6A071F00910549 /* CoreData.framework */,
 				5D27AE1F1E663FAB00F39312 /* MapKit.framework */,
 				5D27AE171E6612CB00F39312 /* CoreLocation.framework */,
 			);
@@ -231,6 +240,7 @@
 				5D27AE1B1E6614D600F39312 /* LocationManager.m in Sources */,
 				5D27ADF31E65E0C700F39312 /* AppDelegate.m in Sources */,
 				5D27AE1E1E66157600F39312 /* DetailViewController.m in Sources */,
+				5D2088E51E6A0A6600910549 /* CoreDataManager.m in Sources */,
 				5D27AE231E66486600F39312 /* SearchViewController.m in Sources */,
 				5D27ADF01E65E0C700F39312 /* main.m in Sources */,
 				5D27AE131E65E24400F39312 /* URLManager.m in Sources */,

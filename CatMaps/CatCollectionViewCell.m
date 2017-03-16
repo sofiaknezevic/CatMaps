@@ -10,7 +10,6 @@
 #import "URLManager.h"
 
 @interface CatCollectionViewCell()
-
 @property (weak, nonatomic) IBOutlet UIImageView *catImageView;
 @property (weak, nonatomic) IBOutlet UILabel *catTitleLabel;
 

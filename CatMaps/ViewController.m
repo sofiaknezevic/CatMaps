@@ -29,12 +29,8 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self performSegueWithIdentifier:@"showSearch" sender:self];
-
-    
     self.catsArray = [[NSMutableArray alloc] init];
-    
     
 }
 
@@ -93,6 +89,7 @@
     [self.catCollectionView reloadData];
     
 }
+
 
 
 @end
